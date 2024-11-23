@@ -1,0 +1,18 @@
+services:
+  server:
+    image: d-bonfire-server
+    container_name: s-bonfire-server
+    network_mode: "host"
+    depends_on:
+      - mock_llm
+  mock_llm:
+    image: d-bonfire-mock-llm
+    container_name: s-bonfire-mock-llm
+    network_mode: "host"
+  shell:
+    image: d-bonfire-shell
+    container_name: s-bonfire-shell
+    network_mode: "host"
+    restart: always
+    stdin_open: true 
+    tty: true
