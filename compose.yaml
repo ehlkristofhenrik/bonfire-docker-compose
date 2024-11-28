@@ -5,6 +5,10 @@ services:
     network_mode: "host"
     depends_on:
       - mock_llm
+    volumes:
+      - type: bind
+        source: ./config.json
+        target: /app/bonfire-ml-src/config.json
   mock_llm:
     image: d-bonfire-mock-llm
     container_name: s-bonfire-mock-llm
