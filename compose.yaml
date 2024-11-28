@@ -1,6 +1,6 @@
 services:
   server:
-    image: d-bonfire-server
+    image: kristofehl/bonfire-server
     container_name: s-bonfire-server
     network_mode: "host"
     depends_on:
@@ -10,11 +10,11 @@ services:
         source: ./config.json
         target: /app/bonfire-ml-src/config.json
   mock_llm:
-    image: d-bonfire-mock-llm
+    image: kristofehl/bonfire-mock-llm
     container_name: s-bonfire-mock-llm
     network_mode: "host"
   shell:
-    image: d-bonfire-shell
+    image: kristofehl/bonfire-shell
     container_name: s-bonfire-shell
     network_mode: "host"
     restart: always
