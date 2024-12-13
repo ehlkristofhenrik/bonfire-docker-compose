@@ -13,6 +13,6 @@ trap QUIT SIGINT
 
 while [ $SHOULD_QUIT -eq 0 ]
 do
-    sudo docker-compose exec shell bonfire-shell
+    sudo docker-compose exec shell /app/bonfire-shell
     sleep 3
 done
