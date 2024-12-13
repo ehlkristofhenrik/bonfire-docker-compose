@@ -1,6 +1,6 @@
-#!/bin/sh
+#!/bin/bash
 
-sudo docker compose up -d
+sudo docker-compose up -d
 
 export SHOULD_QUIT=0
 
@@ -13,6 +13,6 @@ trap QUIT SIGINT
 
 while [ $SHOULD_QUIT -eq 0 ]
 do
-    sudo docker compose attach shell
+    sudo docker-compose exec shell bonfire-shell
     sleep 3
 done
