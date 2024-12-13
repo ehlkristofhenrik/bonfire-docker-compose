@@ -3,8 +3,8 @@ services:
     image: kristofehl/bonfire-server
     container_name: s-bonfire-server
     network_mode: "host"
-    depends_on:
-      - mock_llm
+    # depends_on:
+    #   - mock_llm
     volumes:
       - type: bind
         source: ./config.json
